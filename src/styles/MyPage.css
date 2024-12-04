@@ -2,7 +2,8 @@
 .mypage-container {
     display: flex;
     gap: 100px;
-    margin: 70px 100px;
+    justify-content: center;
+    margin-top: 5%;
 }
   
 /* 왼쪽 네비게이션 */
@@ -94,5 +95,5 @@
 }
   
 .mypage-content {
-    /* padding: 50px; */
+    margin: 0 20px;
 }

@@ -39,12 +39,12 @@ const categories = [
 
 function ChatAnalysis() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [formData, setFormData] = useState({
-    site: "",
-    itemName: "",
-    suspectInfo: "",
-    postUrl: "",
-  });
+  const [site, setSite] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [suspectInfo, setSuspectInfo] = useState("");
+  const [suspectInfoDetail, setSuspectInfoDetail] = useState("");
+  const [postUrl, setPostUrl] = useState("");
+  const [chatPostUrl, setChatPostUrl] = useState("");
 
   const navigate = useNavigate();
 
@@ -57,37 +57,36 @@ function ChatAnalysis() {
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const value = e.target.value;
+    setSite(value);
 
-    setFormData((prevData) => {
-      let newUrl = "";
-      if (name === "site") {
-        switch (value) {
-          case "당근마켓":
-            newUrl = "daangn.com";
-            break;
-          case "중고나라":
-            newUrl = "cafe.naver.com";
-            break;
-          case "번개장터":
-            newUrl = "bunjang.co.kr";
-            break;
-          default:
-            newUrl = "";
-        }
-      }
-      return {
-        ...prevData,
-        [name]: value,
-        postUrl: newUrl, // URL 동적으로 설정
-      };
-    });
+    switch (value) {
+      case "당근마켓":
+        setPostUrl("daangn.com");
+        break;
+      case "중고나라":
+        setPostUrl("cafe.naver.com");
+        break;
+      case "번개장터":
+        setPostUrl("bunjang.co.kr");
+        break;
+      default:
+        setPostUrl("");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", { selectedCategory, ...formData });
-    navigate("/add-image"); // AddImage 페이지로 이동
+    const formData = {
+      selectedCategory,
+      site,
+      itemName,
+      suspectInfo,
+      suspectInfoDetail,
+      postUrl,
+    };
+    console.log("Submitted Data:", formData);
+    navigate("/add-image");
   };
 
   return (
@@ -125,7 +124,7 @@ function ChatAnalysis() {
           <div className="site-select-container">
             <select
               name="site"
-              value={formData.site}
+              value={site}
               onChange={handleInputChange}
               className="site-select"
             >
@@ -138,9 +137,11 @@ function ChatAnalysis() {
             <h3 className="url-prefix">http://www.</h3>
             <input
               type="text"
-              value={formData.postUrl}
+              value={postUrl}
+              onChange={(e) => setPostUrl(e.target.value)}
               className="site-url"
-              placeholder="URL이 자동으로 입력 돼요."
+              placeholder={site === "기타" ? "URL을 입력해주세요." : "URL이 자동으로 입력 돼요."}
+              readOnly={site !== "기타"} // "기타"가 아닌 경우 readOnly 설정
             />
           </div>
         </div>
@@ -151,8 +152,8 @@ function ChatAnalysis() {
           <input
             type="text"
             name="itemName"
-            value={formData.itemName}
-            onChange={handleInputChange}
+            value={itemName}
+            onChange={(e) => setItemName(e.target.value)}
             className="item-name"
             placeholder="거래한 물품의 물품명 또는 모델명을 입력해주세요."
           />
@@ -164,8 +165,8 @@ function ChatAnalysis() {
           <div className="suspect-info-container">
             <select
               name="suspectInfo"
-              value={formData.suspectInfo}
-              onChange={handleInputChange}
+              value={suspectInfo}
+              onChange={(e) => setSuspectInfo(e.target.value)}
               className="suspect-select"
             >
               <option value="">입력하실 정보의 카테고리를 선택해주세요.</option>
@@ -176,6 +177,8 @@ function ChatAnalysis() {
             <input
               type="text"
               name="suspectInfoDetail"
+              value={suspectInfoDetail}
+              onChange={(e) => setSuspectInfoDetail(e.target.value)}
               className="suspect-input"
               placeholder="용의자의 ID, 메신저 주소 또는 이메일을 입력해주세요."
             />
@@ -188,7 +191,8 @@ function ChatAnalysis() {
           <input
             type="text"
             name="postUrl"
-            onChange={handleInputChange}
+            value={chatPostUrl}
+            onChange={(e) => setChatPostUrl(e.target.value)}
             className="post-url"
             placeholder="판매 게시물의 URL을 입력해주세요."
           />
