@@ -1,14 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+// import Home from "./pages/Home";
+import ChatAnalysis from "./pages/ChatAnalysis";
+import Community from "./pages/Community";
+import Report from "./pages/Report";
+import Freeboard from "./pages/Freeboard";
+import Warning from "./pages/Warning";
+import Ideas from "./pages/Ideas";
+import MyPage from "./pages/MyPage";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1 style={{ fontWeight: 900 }}>안녕하세요 (Black)</h1>
-      <h2 style={{ fontWeight: 700 }}>안녕하세요 (Bold)</h2>
-      <p style={{ fontWeight: 400 }}>안녕하세요 (Regular)</p>
-      <p style={{ fontWeight: 100 }}>안녕하세요 (Light)</p>
-    </div>
+    <Router>
+      {/* 모든 페이지에서 보이는 헤더 */}
+      <Header />
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/chat-analysis" element={<ChatAnalysis />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/community/report" element={<Report />} />
+        <Route path="/community/freeboard" element={<Freeboard />} />
+        <Route path="/community/warning" element={<Warning />} />
+        <Route path="/community/ideas" element={<Ideas />} />
+        <Route path="/mypage" element={<MyPage />} />
+      </Routes>
+    </Router>
   );
 }
 

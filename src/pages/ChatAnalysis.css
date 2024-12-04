@@ -1,0 +1,45 @@
+.ChatAnalysis {
+    text-align: center;
+  }
+  
+  .fullscreen-dropzone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .image-container {
+    display: flex;
+    overflow-x: auto; /* 좌우 스크롤 */
+    gap: 10px;
+    max-width: 100%; /* 부모 요소에 맞게 조정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  
+  .image-wrapper {
+    flex: 0 0 auto; /* 스크롤 가능하도록 */
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 잘리더라도 비율 유지 */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
