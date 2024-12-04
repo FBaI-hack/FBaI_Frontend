@@ -10,6 +10,7 @@ import Warning from "./pages/Warning";
 import Ideas from "./pages/Ideas";
 import MyPage from "./pages/MyPage";
 import AddImage from "./pages/AddImage";
+import AnalysisResult from "./pages/AnalysisResult";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/chat-analysis" element={<ChatAnalysis />} />
         <Route path="/add-image" element={<AddImage />} />
+        <Route path="/analysis-result" element={<AnalysisResult />} />
         <Route path="/community" element={<Community />} />
         <Route path="/community/report" element={<Report />} />
         <Route path="/community/freeboard" element={<Freeboard />} />

@@ -6,19 +6,19 @@
   align-items: center;
 }
 
-h1 {
+.add-imagetext2 {
   font-size: 38px;
   font-weight: 500;
   margin-top: 50px;
 }
 
-h2 {
+.add-imagetext3 {
   font-size: 38px;
   font-weight: 500;
   margin-top: 20px;
 }
 
-span {
+.add-imagetext {
   color: var(--blue);
   font-size: 38px;
   font-weight: 500;

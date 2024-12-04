@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/AddImage.css";
 import { ReactComponent as Upload } from "../assets/icons/upload.svg";
 import { ReactComponent as CloseBtn } from "../assets/icons/close.svg";
@@ -7,6 +8,7 @@ function AddImage() {
   const [images, setImages] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   let dragCounter = 0; // 드래그 상태를 안정적으로 관리하기 위한 카운터
+  const navigate = useNavigate();
 
   // 이미지 파일 선택 및 로드
   const handleFileUpload = (files) => {
@@ -69,12 +71,20 @@ function AddImage() {
     };
   }, []);
 
+  const handleStartAnalysis = () => {
+    if (images.length === 0) {
+      alert("최소 한 장의 이미지를 업로드해야 합니다.");
+      return;
+    }
+    navigate("/analysis-result"); // 검사 결과 페이지로 이동
+  };
+
   return (
     <div className="add-image">
       {/* 안내 텍스트 */}
-      <h1>더 정확한 판단을 위해</h1>
-      <h2>
-        <span>채팅 내용</span>을 캡쳐해 업로드해 주세요.
+      <h1 className="add-imagetext2">더 정확한 판단을 위해</h1>
+      <h2 className="add-imagetext3">
+        <span className="add-imagetext">채팅 내용</span>을 캡쳐해 업로드해 주세요.
       </h2>
       <p>버튼을 누르거나 화면으로 드래그&드롭 해주세요.</p>
 
@@ -116,7 +126,7 @@ function AddImage() {
       </div>
 
       {/* 검사 시작 버튼 */}
-      <button className="submit-button">검사 시작</button>
+      <button className="submit-button" onClick={handleStartAnalysis}>검사 시작</button>
     </div>
   );
 }

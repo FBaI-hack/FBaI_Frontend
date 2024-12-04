@@ -1,0 +1,116 @@
+.analysis-result {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+  
+/* 채팅 섹션 */
+.chat-section {
+    width: 440px;
+}
+  
+.chat-section h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+  
+.chat-box {
+    height: 480px;
+    overflow-y: auto;
+    padding-right: 10px;
+    background-color: #9BBBD4;
+    padding: 10px;
+}
+  
+.chat-bubble {
+    max-width: 60%;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+  
+.my-message {
+    background-color: var(--white);
+    color: var(--black);
+    align-self: flex-end;
+    text-align: left;
+    margin-left: auto;
+}
+  
+.other-message {
+    background-color: #f9c74f;
+    color: var(--black);
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+  
+/* 결과 섹션 */
+.result-section {
+    margin-left: 5%;
+}
+
+.result-section-title {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--black);
+    height: 55;
+    display: flex;
+    align-items: center;
+}
+
+.result-section-title-text {
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--black);
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.result-section-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: -5px;
+}
+  
+.scam-percentage {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 55px;
+}
+  
+.criteria-list {
+    margin-top: 25px;
+}
+  
+.criteria-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+  
+.criteria-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+  
+.criteria-text {
+    font-size: 30px;
+    font-weight: 500;
+}
+  
+.red-text {
+    color: var(--red);
+}
+  
+.green-text {
+    color: var(--black);
+}
+  
