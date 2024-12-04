@@ -6,7 +6,8 @@ import { ReactComponent as BlueRightArrow } from "../assets/icons/blue_arrow_rig
 import "../styles/Header.css";
 
 function Header() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showCommunityDropdown, setShowCommunityDropdown] = useState(false);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
   return (
     <header className="header">
@@ -26,13 +27,13 @@ function Header() {
         {/* 커뮤니티 드롭다운 메뉴 */}
         <div
           className="dropdown-container"
-          onMouseEnter={() => setShowDropdown(true)}
-          onMouseLeave={() => setShowDropdown(false)}
+          onMouseEnter={() => setShowCommunityDropdown(true)}
+          onMouseLeave={() => setShowCommunityDropdown(false)}
         >
           <Link to="#" className="nav-link">
             커뮤니티
           </Link>
-          {showDropdown && (
+          {showCommunityDropdown && (
             <div className="dropdown-menu">
               <Link to="/community/freeboard" className="dropdown-item">
                 자유 게시판
@@ -58,12 +59,30 @@ function Header() {
           )}
         </div>
 
-        {/* 프로필 이미지 */}
-        <Link to="/mypage" className="profile-link">
+        {/* 프로필 이미지 드롭다운 메뉴 */}
+        <div
+          className="dropdown-container"
+          onMouseEnter={() => setShowProfileDropdown(true)}
+          onMouseLeave={() => setShowProfileDropdown(false)}
+        >
           <div className="profile-icon-container">
             <ProfileIcon className="profile-icon" />
           </div>
-        </Link>
+          {showProfileDropdown && (
+            <div className="dropdown-menu profile-dropdown">
+              <Link to="/mypage" className="dropdown-item">
+                마이 페이지
+                <RightArrow className="right-arrow" />
+                <BlueRightArrow className="blue-right-arrow" />
+              </Link>
+              <Link to="/logout" className="dropdown-item">
+                로그아웃
+                <RightArrow className="right-arrow" />
+                <BlueRightArrow className="blue-right-arrow" />
+              </Link>
+            </div>
+          )}
+        </div>
       </nav>
     </header>
   );
