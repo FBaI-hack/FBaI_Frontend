@@ -13,8 +13,8 @@ function AddImage() {
   // 이미지 파일 선택 및 로드
   const handleFileUpload = (files) => {
     const fileArray = Array.from(files);
-    if (images.length + fileArray.length > 15) {
-      alert("최대 15장까지 업로드할 수 있습니다.");
+    if (images.length + fileArray.length > 10) {
+      alert("최대 10장까지 업로드할 수 있습니다.");
       return;
     }
     const newImages = fileArray.map((file) => URL.createObjectURL(file));

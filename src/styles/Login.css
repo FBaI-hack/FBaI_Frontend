@@ -43,7 +43,7 @@
     padding: 10px;
     margin-bottom: 50px;
     border: none;
-    border-bottom: 0.5px solid var(--navy);
+    border-bottom: 0.5px solid var(--gray_blue_30);
     outline: none;
     transition: border-color 0.2s;
 }

@@ -59,7 +59,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,11 +73,42 @@ p {
 
 .image-container {
   display: flex;
-  width: 700;
-  overflow-x: scroll;
-  padding: 10px 0;
+  width: 600px; /* 고정된 너비 */
+  overflow-x: scroll; /* 좌우 스크롤을 활성화 */
+  padding: 10px 10px;
   gap: 30px;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* 스크롤이 부드럽게 동작하도록 설정 */
 }
+
+/* 전체 스크롤바 스타일 */
+.image-container::-webkit-scrollbar {
+  width: 10px; /* 스크롤바의 너비 */
+  height: 7px; /* 가로 스크롤바의 높이 */
+}
+
+/* 스크롤바 트랙 스타일 (배경) */
+.image-container::-webkit-scrollbar-track {
+  background: var(--light_blue_10); /* 트랙 배경색 */
+  border-radius: 10px; /* 트랙의 둥근 모서리 */
+}
+
+/* 스크롤바 핸들 스타일 */
+.image-container::-webkit-scrollbar-thumb {
+  background: var(--gray_blue_30); /* 핸들의 색상 */
+  border-radius: 10px; /* 핸들의 둥근 모서리 */
+}
+
+/* 스크롤바 핸들 hover 스타일 */
+.image-container::-webkit-scrollbar-thumb:hover {
+  background: var(--navy); /* Hover 시 핸들의 색상 */
+}
+
+/* 스크롤바의 두 끝 버튼 제거 */
+.image-container::-webkit-scrollbar-button {
+  display: none;
+}
+
 
 .image-wrapper {
   position: relative;
@@ -86,6 +117,7 @@ p {
   border: 1px solid var(--gray);
   border-radius: 20px;
   background: var(--light-gray);
+  flex-shrink: 0;
 }
 
 .image-wrapper img {
