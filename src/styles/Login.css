@@ -1,0 +1,76 @@
+/* 전체 컨테이너 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+/* 로고 */
+.login-logo {
+    font-size: 90px;
+    font-weight: 800;
+    color: var(--navy);
+}
+  
+.login-tagline {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+  
+/* 폼 */
+.login-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+  
+/* 라벨 */
+.login-label {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+  
+/* 입력 필드 */
+.login-input {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 50px;
+    border: none;
+    border-bottom: 0.5px solid var(--navy);
+    outline: none;
+    transition: border-color 0.2s;
+}
+  
+.login-input:focus {
+    border-bottom: 0.5px solid var(--blue);
+}
+  
+  /* 버튼 */
+.login-button,
+.signup-button {
+    align-self: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    width: 240px;
+    height: 40px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease, transform 0.2s;
+}
+  
+.login-button:hover,
+.signup-button:hover {
+    box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.25);
+}
+  

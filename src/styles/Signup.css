@@ -1,0 +1,71 @@
+/* 전체 컨테이너 */
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+/* 제목 */
+.sign-up-title {
+    font-size: 90px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 40px;
+}
+
+/* 폼 */
+.sign-up-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+  
+/* 입력 그룹 */
+.sign-up-input-group {
+    margin-bottom: 20px;
+}
+  
+.sign-up-input-group label {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+  
+.sign-up-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 0.5px solid var(--navy);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 20px;
+}
+
+.sign-up-input-group input:focus {
+    border-bottom: 0.5px solid var(--blue);
+}
+  
+/* 회원가입 버튼 */
+.sign-up-button {
+    align-self: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    width: 240px;
+    height: 40px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: box-shadow 0.3s ease, transform 0.2s;
+}
+  
+.sign-up-button:hover {
+    box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.25);
+}
+  
