@@ -1,0 +1,166 @@
+.register-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    position: relative;
+}
+  
+.register-post-category-selector {
+    width: 150px;
+    align-self: start;
+    margin-bottom: 20px;
+    position: relative;
+}
+  
+.register-post-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.register-post-category-header-text {
+    font-weight: 800;
+    font-size: 20px;
+}
+  
+.register-post-category-dropdown {
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    width: 100%;
+    border: 1px solid var(--gray_blue_30);
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+  
+.register-post-category-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+}
+  
+.register-post-category-option:hover {
+    background-color: var(--light_gray);
+}
+  
+.register-post-checkbox-icon {
+    margin-right: 10px;
+}
+  
+.register-post-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+  
+.register-post-title {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid var(--gray_blue_30);
+}
+  
+.register-post-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.register-post-author {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.register-post-person-icon-container {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    background-color: var(--gray);
+    border-radius: 50%;
+}
+  
+.register-post-person-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.register-post-date {
+    font-size: 15px;
+    padding-right: 10px;
+}
+  
+.register-post-content {
+    height: 250px;
+    padding: 20px 25px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid var(--gray_blue_30);
+    border-top: 1px solid var(--gray_blue_30);
+    resize: none;
+    margin-bottom: 20px;
+}
+  
+.register-post-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.register-post-link-title {
+    font-size: 13px;
+}
+  
+.register-post-link-input {
+    margin-left: 10px;
+    font-size: 13px;
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--gray_blue_30);
+}
+  
+.register-post-save-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 28px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+}
+  
+.register-post-cancel-button {
+    width: 64px;
+    height: 28px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: flex-end;
+    font-size: 15px;
+    font-weight: 400;
+}
+  

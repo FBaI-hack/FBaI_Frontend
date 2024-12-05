@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as LeftArrow } from "../assets/icons/arrow_left.svg";
 import { ReactComponent as RightArrow } from "../assets/icons/arrow_right.svg";
 import { ReactComponent as Person } from "../assets/icons/person.svg";
@@ -18,6 +19,7 @@ const POSTS_PER_PAGE = 12;
 function Freeboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredPosts = dummyPosts
     .filter(
@@ -56,7 +58,10 @@ function Freeboard() {
       </div>
 
       {/* 등록 버튼 */}
-      <button className="freeboard-register-button">등록</button>
+      <button 
+        className="freeboard-register-button"
+        onClick={() => navigate("/register-post", { state: { defaultCategory: "자유 게시판" } })}
+      >등록</button>
 
       {/* 게시판 */}
       <h2 className="freeboard-title">자유 게시판</h2>

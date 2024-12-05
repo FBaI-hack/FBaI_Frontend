@@ -10,6 +10,7 @@ import Ideas from "./pages/Ideas";
 import MyPage from "./pages/MyPage";
 import AddImage from "./pages/AddImage";
 import AnalysisResult from "./pages/AnalysisResult";
+import RegisterPost from "./pages/RegisterPost";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/community/freeboard" element={<Freeboard />} />
         <Route path="/community/warning" element={<Warning />} />
         <Route path="/community/ideas" element={<Ideas />} />
+        <Route path="/register-post" element={<RegisterPost />} />
         <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </Router>
