@@ -41,6 +41,7 @@
     align-self: flex-end;
     text-align: left;
     margin-left: auto;
+    border-top-right-radius: 0;
 }
   
 .other-message {
@@ -49,6 +50,7 @@
     align-self: flex-start;
     text-align: left;
     margin-right: auto;
+    border-top-left-radius: 0;
 }
   
 /* 결과 섹션 */

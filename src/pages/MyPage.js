@@ -5,6 +5,7 @@ import ProfileEdit from "./ProfileEdit";
 import Posts from "./Posts";
 import Comments from "./Comments";
 import Favorites from "./Favorites";
+import MyChatAnalysis from "./MyChatAnalysis";
 import "../styles/MyPage.css";
 
 function MyPage() {
@@ -19,6 +20,8 @@ function MyPage() {
             return <Posts />;
         case "comments":
             return <Comments />;
+        case "chat-analysis-result":
+            return <MyChatAnalysis />;
         case "favorites":
             return <Favorites />;
         default:
@@ -59,6 +62,12 @@ function MyPage() {
                 onClick={() => setSelectedPage("comments")}
                 >
                 작성한 댓글
+                </button>
+                <button
+                className={`nav-item ${selectedPage === "chat-analysis-result" ? "active" : ""}`}
+                onClick={() => setSelectedPage("chat-analysis-result")}
+                >
+                채팅 분석 결과
                 </button>
                 <button
                 className={`nav-item ${selectedPage === "favorites" ? "active" : ""}`}
