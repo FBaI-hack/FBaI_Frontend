@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 import ChatAnalysis from "./pages/ChatAnalysis";
 import Report from "./pages/Report";
 import Freeboard from "./pages/Freeboard";
@@ -35,7 +35,7 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/chat-analysis" element={<ChatAnalysis />} />
           <Route path="/add-image" element={<AddImage />} />
           <Route path="/analysis-result" element={<AnalysisResult />} />
