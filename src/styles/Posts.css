@@ -1,0 +1,102 @@
+.posts-content-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 772px;
+    height: 400px;
+    margin: auto;
+    margin-top: 40px;
+}
+  
+.posts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.posts-table-thead {
+    font-size: 13px;
+    font-weight: 500;
+    background-color: var(--white);
+}
+
+.posts-table-tbody {
+    font-size: 15px;
+    font-weight: 500;
+    background-color: var(--light_blue_10);
+    cursor: pointer;
+}
+
+.posts-table th,
+.posts-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray_blue_30);
+}
+
+/* 번호 열 스타일 */
+.posts-table th:nth-child(1),
+.posts-table td:nth-child(1) {
+    width: 10%;
+}
+
+/* 타이틀 열 스타일 */
+.posts-table td:nth-child(2) {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    /* width: 50%; 타이틀 열의 너비를 더 크게 설정 */
+}
+
+/* 등록일 열 스타일 */
+.posts-table th:nth-child(3),
+.posts-table td:nth-child(3) {
+    width: 16%; /* 등록일 열 너비 */
+    padding-right: 10px; /* 오른쪽 여백 추가 */
+}
+
+/* 조회수 열 스타일 */
+.posts-table th:nth-child(4),
+.posts-table td:nth-child(4) {
+    width: 10%; /* 조회수 열 너비 */
+    padding-right: 10px; /* 오른쪽 여백 추가 */
+}
+
+.posts-table-tbody-title {
+    padding-left: 10px;
+}
+  
+.posts-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.posts-pagination-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+  
+.posts-pagination-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+  
+.posts-pagination-arrow:hover:not(:disabled) {
+    transform: scale(1.2);
+}
+  
+.posts-arrow-icon {
+    width: 24px;
+    height: 24px;
+}
+  
+.posts-pagination-info {
+    margin: 0 15px;
+    font-size: 16px;
+}
+  
