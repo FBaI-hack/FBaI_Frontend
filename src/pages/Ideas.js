@@ -43,6 +43,17 @@ function Ideas() {
     currentPage * POSTS_PER_PAGE
   );
 
+  const handlePostClick = (post) => {
+    navigate("/post-detail", {
+      state: {
+        category: "검거 아이디어",
+        author: post.author,
+        title: post.title,
+        date: post.date,
+      },
+    });
+  };
+
   return (
     <div className="freeboard-content-body">
       {/* 검색창 */}
@@ -77,7 +88,10 @@ function Ideas() {
         </thead>
         <tbody className="freeboard-table-tbody">
           {currentPosts.map((post, index) => (
-            <tr key={post.id}>
+            <tr 
+              key={post.id}
+              onClick={() => handlePostClick(post)}
+            >
               <td>
                 {dummyPosts.length - ((currentPage - 1) * POSTS_PER_PAGE + index)}
               </td>

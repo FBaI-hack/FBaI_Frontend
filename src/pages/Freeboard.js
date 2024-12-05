@@ -43,6 +43,17 @@ function Freeboard() {
     currentPage * POSTS_PER_PAGE
   );
 
+  const handlePostClick = (post) => {
+    navigate("/post-detail", {
+      state: {
+        category: "자유 게시판",
+        author: post.author,
+        title: post.title,
+        date: post.date,
+      },
+    });
+  };
+
   return (
     <div className="freeboard-content-body">
       {/* 검색창 */}
@@ -77,7 +88,10 @@ function Freeboard() {
         </thead>
         <tbody className="freeboard-table-tbody">
           {currentPosts.map((post, index) => (
-            <tr key={post.id}>
+            <tr 
+              key={post.id}
+              onClick={() => handlePostClick(post)}
+            >
               <td>
                 {dummyPosts.length - ((currentPage - 1) * POSTS_PER_PAGE + index)}
               </td>

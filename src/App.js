@@ -11,6 +11,7 @@ import MyPage from "./pages/MyPage";
 import AddImage from "./pages/AddImage";
 import AnalysisResult from "./pages/AnalysisResult";
 import RegisterPost from "./pages/RegisterPost";
+import PostDetail from "./pages/PostDetail";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/community/warning" element={<Warning />} />
         <Route path="/community/ideas" element={<Ideas />} />
         <Route path="/register-post" element={<RegisterPost />} />
+        <Route path="/post-detail" element={<PostDetail />} />
         <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </Router>
