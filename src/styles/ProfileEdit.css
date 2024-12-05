@@ -7,6 +7,7 @@
     height: 400px;
     border-radius: 30px;
     margin: auto;
+    position: relative;
 }
   
 .profile-edit-section-title {
@@ -112,14 +113,34 @@
 .editable-input,
 .editable-textarea {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     resize: none;
     outline: none;
 }
 
 .editable-input:focus,
 .editable-textarea:focus {
-    outline: 0.5px solid var(--blue); /* 원하는 색상과 두께 */
-    border: 0.5px solid var(--blue); /* 포커스 시 테두리 색상 변경 */
-    border-radius: 5px; /* 테두리 모양 유지 */
+    outline: none; /* 원하는 색상과 두께 */
+    border: none; /* 포커스 시 테두리 색상 변경 */
+}
+
+/* 저장 버튼 스타일링 */
+.profile-edit-save-button {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 80px;
+    height: 30px;
+    background-color: var(--navy); /* 버튼 색상 */
+    color: var(--white);
+    border: none;
+    border-radius: 20px; /* 둥근 버튼 */
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s;
+}
+  
+.profile-edit-save-button:hover {
+    box-shadow: inset 0px 0px 5px 3px rgba(255, 255, 255, 0.25);
 }

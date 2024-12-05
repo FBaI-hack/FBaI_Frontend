@@ -10,6 +10,12 @@ function ProfileEdit() {
   const [isEditingNickname, setIsEditingNickname] = useState(false);
   const [isEditingIntro, setIsEditingIntro] = useState(false);
 
+  // 저장 버튼 클릭 이벤트
+  const handleSave = () => {
+    alert(`닉네임: ${nickname}\n자기소개: ${intro}`);
+    // 여기에 저장 로직 추가 (예: API 호출)
+  };
+
   return (
     <div className="content-body">
       <div className="profile-edit-section">
@@ -64,6 +70,11 @@ function ProfileEdit() {
               <span className="detail-item-intro-text">{intro}</span>
           )}
         </div>
+
+        {/* 저장 버튼 */}
+        <button className="profile-edit-save-button" onClick={handleSave}>
+          저장
+        </button>
       </div>
     </div>
   );
