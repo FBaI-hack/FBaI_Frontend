@@ -1,0 +1,173 @@
+.freeboard-content-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    position: relative;
+}
+
+.freeboard-search-container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 624px;
+    height: 64px;
+}
+
+.freeboard-search-input {
+    width: 624px;
+    height: 48px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    font-size: 13px;
+    outline: none;
+}
+
+.freeboard-search-icon {
+    margin-left: -40px;
+    height: 21px;
+    width: 21px;
+    cursor: pointer;
+}
+
+.freeboard-register-button {
+    position: absolute;
+    top: 90px;
+    right: 8%;
+    align-self: flex-end;
+    width: 72px;
+    height: 32px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.freeboard-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 15px;
+    /* left: 8%; */
+}
+
+.freeboard-table {
+    width: 85%;
+    border-collapse: collapse;
+}
+
+.freeboard-table-thead {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--white);
+}
+
+.freeboard-table-tbody {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--light_blue_10);
+    cursor: pointer;
+}
+
+.freeboard-table th,
+.freeboard-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray_blue_30);
+}
+
+/* 번호 열 스타일 */
+.freeboard-table th:nth-child(1),
+.freeboard-table td:nth-child(1) {
+    width: 10%;
+}
+
+/* 작성자 열 스타일 */
+.freeboard-table th:nth-child(2),
+.freeboard-table td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* 아이콘과 텍스트 사이 간격 설정 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 제목 열 스타일 */
+.freeboard-table td:nth-child(3) {
+    text-align: left;
+    width: 50%;
+}
+
+/* 등록일 열 스타일 */
+.freeboard-table th:nth-child(4),
+.freeboard-table td:nth-child(4) {
+    width: 15%;
+}
+
+/* 조회수 열 스타일 */
+.freeboard-table th:nth-child(5),
+.freeboard-table td:nth-child(5) {
+    width: 10%;
+}
+
+.freeboard-person-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--gray);
+    border-radius: 50%;
+    flex-shrink: 0; /* 컨테이너 크기를 고정 */
+}
+
+.freeboard-person-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.freeboard-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.freeboard-pagination-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.freeboard-pagination-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.freeboard-pagination-arrow:hover:not(:disabled) {
+    transform: scale(1.2);
+}
+
+.freeboard-arrow-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.freeboard-pagination-info {
+    margin: 0 15px;
+    font-size: 16px;
+}
