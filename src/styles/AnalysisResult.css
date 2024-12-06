@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 5%;
+    position: relative;
 }
   
 /* 채팅 섹션 */
@@ -115,4 +116,16 @@
 .green-text {
     color: var(--black);
 }
-  
+
+.back-button-to-analysis-result {
+    position: absolute;
+    top: -50px;
+    width: 120px;
+    height: 30px;
+    background-color: var(--navy);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+}

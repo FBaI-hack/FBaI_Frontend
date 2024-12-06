@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ReactComponent as ProfileIcon } from "../assets/icons/person.svg";
 import ProfileEdit from "./ProfileEdit";
 import Posts from "./Posts";
@@ -9,7 +9,14 @@ import MyChatAnalysis from "./MyChatAnalysis";
 import "../styles/MyPage.css";
 
 function MyPage() {
+    const location = useLocation();
     const [selectedPage, setSelectedPage] = useState("profile-edit");
+
+    useEffect(() => {
+        if (location.state?.selectedPage) {
+          setSelectedPage(location.state.selectedPage);
+        }
+    }, [location.state]);
 
     // 페이지 컴포넌트를 동적으로 렌더링
     const renderPageContent = () => {

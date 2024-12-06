@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/AnalysisResult.css";
 import { ReactComponent as Delete } from "../assets/icons/delete.svg";
 import { ReactComponent as CheckMark } from "../assets/icons/check_mark.svg";
@@ -37,9 +38,24 @@ const calculateScamPercentage = (criteria) => {
 
 function AnalysisResult() {
   const scamPercentage = calculateScamPercentage(scamCriteria);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isFromMyChatAnalysis = location.state?.from === "MyChatAnalysis";
 
   return (
     <div className="analysis-result">
+
+      {/* 돌아가기 버튼 */}
+      {isFromMyChatAnalysis && (
+        <button
+          className="back-button-to-analysis-result"
+          onClick={() => navigate("/mypage", { state: { selectedPage: "chat-analysis-result" } })}
+        >
+          돌아가기
+        </button>
+      )}
+
       {/* 채팅 내용 */}
       <div className="chat-section">
         <h2>채팅 내역</h2>
