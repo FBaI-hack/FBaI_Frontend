@@ -14,6 +14,7 @@ import RegisterPost from "./pages/RegisterPost";
 import PostDetail from "./pages/PostDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Loading from "./pages/Loading";
 import "./App.css";
 
 // Layout component to conditionally show Header
@@ -48,6 +49,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/loading" element={<Loading />} />
         </Routes>
       </Layout>
     </Router>
