@@ -47,6 +47,17 @@
     width: 42px;
     height: 42px;
 }
+
+.image-upload-label {
+  cursor: pointer;
+}
+
+.profile-avatar-icon-ch {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
   
 .edit-icon-container {
     position: absolute;

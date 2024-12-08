@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { ReactComponent as ProfileIcon } from "../assets/icons/person.svg";
+import useUserStore from "../store/userStore";
 import ProfileEdit from "./ProfileEdit";
 import Posts from "./Posts";
 import Comments from "./Comments";
@@ -11,6 +12,10 @@ import "../styles/MyPage.css";
 function MyPage() {
     const location = useLocation();
     const [selectedPage, setSelectedPage] = useState("profile-edit");
+
+    const { user } = useUserStore(); // Zustand에서 사용자 정보 가져오기
+    const profileImage = user?.image_url || null; // 사용자 이미지
+    const introduction = user?.introduce || "자기소개가 없습니다.";
 
     useEffect(() => {
         if (location.state?.selectedPage) {
@@ -44,11 +49,19 @@ function MyPage() {
                 <div className="mypage-profile-card">
                     <div className="mypage-profile-card-content">
                     <div className="mypage-profile-card-icon-container">
-                        <ProfileIcon className="mypage-profile-card-icon" />
+                        {profileImage ? (
+                            <img
+                                src={profileImage}
+                                alt="Profile"
+                                className="mypage-profile-card-icon"
+                            />
+                        ) : (
+                            <ProfileIcon className="mypage-profile-card-icon" />
+                        )}
                     </div>
-                    <h3 className="mypage-profile-name">이름</h3>
+                    <h3 className="mypage-profile-name">{user?.nickname}</h3>
                     </div>
-                    <p className="mypage-profile-intro">자기소개</p>
+                    <p className="mypage-profile-intro">{introduction}</p>
                 </div>
             </div>
             <nav className="mypage-nav">
