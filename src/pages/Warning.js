@@ -6,13 +6,72 @@ import { ReactComponent as Person } from "../assets/icons/person.svg";
 import { ReactComponent as Search } from "../assets/icons/search.svg";
 import "../styles/Freeboard.css";
 
-const dummyPosts = Array.from({ length: 20 }, (_, index) => ({
-  id: index + 1,
-  author: `작성자${20 - index}`,
-  title: `김${20 - index} 조심하세요.`,
-  date: `2024-11-${26 - (index % 10)}`,
-  views: Math.floor(Math.random() * 100),
-}));
+const dummyPosts = [
+  {
+    id: 1,
+    author: "이영수",
+    title: "중고 노트북 구매 후 가짜 제품이 왔습니다.",
+    date: "2024-12-09",
+    views: 123,
+  },
+  {
+    id: 2,
+    author: "박민정",
+    title: "거래 후 판매자가 잠수를 탔습니다.",
+    date: "2024-12-08",
+    views: 98,
+  },
+  {
+    id: 3,
+    author: "김철수",
+    title: "핸드폰을 구매했는데 작동하지 않습니다.",
+    date: "2024-12-05",
+    views: 145,
+  },
+  {
+    id: 4,
+    author: "정수진",
+    title: "거래 약속 장소에 나타나지 않은 판매자",
+    date: "2024-12-04",
+    views: 67,
+  },
+  {
+    id: 5,
+    author: "최수진",
+    title: "직거래에서 위조 지폐를 받았습니다.",
+    date: "2024-12-01",
+    views: 204,
+  },
+  {
+    id: 6,
+    author: "한예슬",
+    title: "중고 거래 사기를 당했는데 도움받을 곳이 없네요.",
+    date: "2024-11-26",
+    views: 173,
+  },
+  {
+    id: 7,
+    author: "김지훈",
+    title: "거래 후 물건을 다시 빼앗아 간 사례입니다.",
+    date: "2024-11-25",
+    views: 189,
+  },
+  {
+    id: 8,
+    author: "송지훈",
+    title: "온라인 거래 후 물건이 오지 않습니다.",
+    date: "2024-11-24",
+    views: 132,
+  },
+  {
+    id: 9,
+    author: "오세영",
+    title: "중고 거래 사이트에서 사기 피해를 당했습니다.",
+    date: "2024-11-21",
+    views: 112,
+  },
+];
+
 
 const POSTS_PER_PAGE = 12;
 

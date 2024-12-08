@@ -6,13 +6,72 @@ import { ReactComponent as Person } from "../assets/icons/person.svg";
 import { ReactComponent as Search } from "../assets/icons/search.svg";
 import "../styles/Freeboard.css";
 
-const dummyPosts = Array.from({ length: 20 }, (_, index) => ({
-  id: index + 1,
-  author: `작성자${20 - index}`,
-  title: `김${20 - index} 조심하세요.`,
-  date: `2024-11-${26 - (index % 10)}`,
-  views: Math.floor(Math.random() * 100),
-}));
+const dummyPosts = [
+  {
+    id: 1,
+    author: "김영수",
+    title: "실시간 위치 추적을 이용한 범죄자 검거 아이디어",
+    date: "2024-12-08",
+    views: 120,
+  },
+  {
+    id: 2,
+    author: "박민정",
+    title: "안심 거래 앱에 의무 신원 인증 도입 제안",
+    date: "2024-12-07",
+    views: 95,
+  },
+  {
+    id: 3,
+    author: "이철수",
+    title: "범죄 예방을 위한 공공 장소의 AI 감시 카메라",
+    date: "2024-12-03",
+    views: 140,
+  },
+  {
+    id: 4,
+    author: "최수진",
+    title: "가짜 계정 검증 시스템 구축 방안",
+    date: "2024-11-29",
+    views: 80,
+  },
+  {
+    id: 5,
+    author: "한예슬",
+    title: "범죄 유형별 맞춤 대응 매뉴얼 제작 아이디어",
+    date: "2024-11-25",
+    views: 105,
+  },
+  {
+    id: 6,
+    author: "송지훈",
+    title: "블록체인 기술을 활용한 거래 내역 보안 강화",
+    date: "2024-11-23",
+    views: 135,
+  },
+  {
+    id: 7,
+    author: "정세영",
+    title: "거래 시 보험 가입 의무화 방안",
+    date: "2024-11-17",
+    views: 175,
+  },
+  {
+    id: 8,
+    author: "오민석",
+    title: "범죄 신고 앱에 AI 분석 기능 추가",
+    date: "2024-11-15",
+    views: 110,
+  },
+  {
+    id: 9,
+    author: "강찬욱",
+    title: "가상현실(VR)을 활용한 범죄 예방 교육 프로그램",
+    date: "2024-11-10",
+    views: 98,
+  },
+];
+
 
 const POSTS_PER_PAGE = 12;
 
