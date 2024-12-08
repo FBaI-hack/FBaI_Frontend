@@ -13,6 +13,9 @@ function ProfileEdit() {
   const [isEditingIntro, setIsEditingIntro] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const fixedImageUrl =
+    "https://i.namu.wiki/i/GQMqb8jtiqpCo6_US7jmWDO30KfPB2MMvbdURVub61Rs6ALKqbG-nUATj-wNk7bXXWIDjiLHJxWYkTELUgybkA.webp";
+
   useEffect(() => {
     if (user) {
       setNickname(user.nickname);
@@ -26,7 +29,7 @@ function ProfileEdit() {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        // console.log("파일 로드 완료:", reader.result);
+        console.log("파일 로드 완료:", reader.result);
         setSelectedImage(reader.result); // 상태 업데이트
       };
       reader.readAsDataURL(file);
@@ -37,7 +40,7 @@ function ProfileEdit() {
   const handleSave = async () => {
     const requestBody = {
       nickname,
-      image_url: selectedImage || "",
+      image_url: fixedImageUrl || "",
       introduce: intro,
     };
     console.log(requestBody);

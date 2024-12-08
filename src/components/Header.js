@@ -79,7 +79,7 @@ function Header() {
               <img
                 src={user.image_url}
                 alt="Profile"
-                className="header-profile-image"
+                className="profile-avatar-icon-ch"
               />
             ) : (
               <ProfileIcon className="profile-icon" />

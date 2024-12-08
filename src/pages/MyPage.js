@@ -53,7 +53,7 @@ function MyPage() {
                             <img
                                 src={profileImage}
                                 alt="Profile"
-                                className="mypage-profile-card-icon"
+                                className="profile-avatar-icon-ch"
                             />
                         ) : (
                             <ProfileIcon className="mypage-profile-card-icon" />
