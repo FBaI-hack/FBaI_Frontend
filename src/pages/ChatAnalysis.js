@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/ChatAnalysis.css";
 import { useNavigate } from "react-router-dom";
+import { ReactComponent as CloseBtn } from "../assets/icons/close.svg";
 
 const categories = [
   { name: "휴대폰/주변기기", icon: "https://thecheat.co.kr/rb/layouts/2014/images/icon/03_cellphone.gif" },
@@ -46,6 +47,9 @@ function ChatAnalysis() {
   const [postUrl, setPostUrl] = useState("");
   const [chatPostUrl, setChatPostUrl] = useState("");
 
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [dragActive, setDragActive] = useState(false);
+
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
@@ -87,6 +91,36 @@ function ChatAnalysis() {
     };
     console.log("Submitted Data:", formData);
     navigate("/add-image");
+  };
+
+  const handleImageUpload = (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedImage(URL.createObjectURL(file));
+    }
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    setDragActive(true);
+  };
+
+  const handleDragLeave = () => {
+    setDragActive(false);
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    setDragActive(false);
+    const file = event.dataTransfer.files[0];
+    if (file) {
+      setSelectedImage(URL.createObjectURL(file));
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setSelectedImage(null);
   };
 
   return (
@@ -196,6 +230,35 @@ function ChatAnalysis() {
             className="post-url"
             placeholder="판매 게시물의 URL을 입력해주세요."
           />
+        </div>
+
+        <h3 className="form-group-image-preview-text">올라온 상품 사진 하나를 업로드 해주세요.</h3>
+
+        <div
+          className={`form-group-image-upload-area ${dragActive ? "drag-active" : ""}`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          {selectedImage ? (
+            <div className="form-group-image-preview">
+              <img src={selectedImage} alt="Uploaded" />
+              <button className="form-group-remove-image-button" onClick={handleRemoveImage}>
+                <CloseBtn className="form-group-remove-image-button-t"/>
+              </button>
+            </div>
+          ) : (
+            <label htmlFor="image-upload-input" className="form-group-upload-label">
+              <p style={{ fontSize: "13px", color: "#587DEB" }}>여기를 클릭하거나<br /> 이미지를 드래그하여 업로드하세요</p>
+              <input
+                type="file"
+                id="image-upload-input"
+                accept="image/*"
+                onChange={handleImageUpload}
+                hidden
+              />
+            </label>
+          )}
         </div>
 
         {/* 제출 버튼 */}

@@ -196,3 +196,75 @@ h1 {
 .submit-button:hover {
   box-shadow: inset 0px 0px 10px 5px rgba(255, 255, 255, 0.25); /* Inner Shadow */
 }
+
+.form-group-image-preview-text {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.form-group-image-upload-area {
+  align-self: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 250px;
+  border: 2px dashed var(--gray_blue_30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: var(--light_gray);
+  border-radius: 10px;
+}
+
+.form-group-image-upload-area.drag-active {
+  background-color: var(--blue_10);
+  border-color: var(--blue);
+}
+
+.form-group-upload-label {
+  text-align: center;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.form-group-image-preview {
+  position: relative;
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group-image-preview img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.form-group-remove-image-button {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border: none;
+  background-color: var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group-remove-image-button-t {
+  height: 20px;
+  width: 20px;
+}
