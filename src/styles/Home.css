@@ -1,0 +1,104 @@
+:root {
+    --light-blue: #f0f8ff;
+    --gray: #6c757d;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --table-border: #e9ecef;
+    --hover-color: #f8f9fa;
+  }
+  
+  .home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .home-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  
+  .home-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+  
+  .home-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--light-blue);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-summary-item {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    text-align: center;
+  }
+  
+  .home-summary-item span {
+    color: var(--blue);
+  }
+  
+  .home-section-title {
+    margin: 30px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-gray);
+    border-left: 4px solid var(--blue);
+    padding-left: 10px;
+  }
+  
+  .home-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .home-table th, .home-table td {
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .home-table th {
+    background-color: var(--light-blue);
+    color: var(--dark-gray);
+    border-bottom: 2px solid var(--table-border);
+    text-transform: uppercase;
+  }
+  
+  .home-table td {
+    background-color: var(--white);
+    border: 1px solid var(--table-border);
+    border-radius: 8px;
+  }
+  
+  .home-table tr:hover td {
+    background-color: var(--hover-color);
+  }
+  
+  .home-table tr:nth-child(even) td {
+    background-color: var(--light-blue);
+  }
+  
+  .home-table td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .home-table td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  

@@ -4,17 +4,18 @@ import { ReactComponent as RightArrow } from "../assets/icons/arrow_right.svg";
 import "../styles/Posts.css";
 
 const dummyPosts = [
-  { id: 1, title: "김00 조심하세요.", date: "2024-11-26", views: 56 },
-  { id: 2, title: "이00 조심하세요.", date: "2024-11-25", views: 42 },
-  { id: 3, title: "박00 조심하세요.", date: "2024-11-24", views: 10 },
-  { id: 4, title: "최00 조심하세요.", date: "2024-11-23", views: 44 },
-  { id: 5, title: "고00 조심하세요.", date: "2024-11-22", views: 78 },
-  { id: 6, title: "서00 조심하세요.", date: "2024-11-21", views: 66 },
-  { id: 7, title: "유00 조심하세요.", date: "2024-11-20", views: 8 },
-  { id: 8, title: "길00 조심하세요.", date: "2024-11-19", views: 100 },
-  { id: 9, title: "임00 조심하세요.", date: "2024-11-18", views: 30 },
-  { id: 10, title: "권00 조심하세요.", date: "2024-11-17", views: 2 },
+  { id: 1, title: "중고거래 사기 사례 정리", date: "2024-11-26", views: 56 },
+  { id: 2, title: "사기 피해 대처 방법", date: "2024-11-25", views: 42 },
+  { id: 3, title: "안전한 거래 팁 공유", date: "2024-11-24", views: 10 },
+  { id: 4, title: "온라인 사기 유형 분석", date: "2024-11-23", views: 44 },
+  { id: 5, title: "최근 사례와 예방법", date: "2024-11-22", views: 78 },
+  { id: 6, title: "주의해야 할 거래 플랫폼", date: "2024-11-21", views: 66 },
+  { id: 7, title: "피해 예방을 위한 팁", date: "2024-11-20", views: 8 },
+  { id: 8, title: "실제 사기 경험 공유", date: "2024-11-19", views: 100 },
+  { id: 9, title: "사기범 신고 절차 안내", date: "2024-11-18", views: 30 },
+  { id: 10, title: "거래 중 주의사항", date: "2024-11-17", views: 2 },
 ];
+
 
 const POSTS_PER_PAGE = 8;
 

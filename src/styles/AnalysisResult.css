@@ -57,6 +57,7 @@
 /* 결과 섹션 */
 .result-section {
     margin-left: 5%;
+    margin-top: -20px;
 }
 
 .result-section-title {
@@ -129,3 +130,39 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+/* 중고 거래 체크리스트 섹션 */
+.checklist-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+  
+  .checklist-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--black);
+  }
+  
+  .checklist-items {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .checklist-item {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+    display: flex;
+    align-items: center;
+  }
+  
+  .checklist-item::before {
+    content: "•";
+    color: var(--blue);
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
