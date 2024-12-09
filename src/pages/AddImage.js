@@ -76,7 +76,10 @@ function AddImage() {
       alert("최소 한 장의 이미지를 업로드해야 합니다.");
       return;
     }
-    navigate("/analysis-result"); // 검사 결과 페이지로 이동
+    navigate("/loading"); // 먼저 로딩 페이지로 이동
+    setTimeout(() => {
+      navigate("/analysis-result"); // 3초 후 분석 결과 페이지로 이동
+    }, 3000);
   };
 
   return (

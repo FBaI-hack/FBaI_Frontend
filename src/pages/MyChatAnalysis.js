@@ -49,8 +49,10 @@ function MyChatAnalysis() {
     }
   };
 
-  const handleRowClick = (id) => {
-    navigate("/analysis-result", { state: { from: "MyChatAnalysis" } });
+  const handleRowClick = (id, index) => {
+    if (editingIndex !== index) {
+      navigate("/analysis-result", { state: { from: "MyChatAnalysis" } });
+    }
   };
 
   return (
@@ -68,13 +70,16 @@ function MyChatAnalysis() {
             <tr key={item.id}>
               <td>{(currentPage - 1) * POSTS_PER_PAGE + index + 1}</td>
               <td
-                onClick={() => handleRowClick(item.id)}
+                onClick={() => handleRowClick(item.id, index)}
               >
                 {editingIndex === index ? (
                   <input
                     type="text"
                     value={tempTitle}
-                    onChange={(e) => setTempTitle(e.target.value)}
+                    onChange={(e) => {
+                      e.stopPropagation(); // 이벤트 전파 방지
+                      setTempTitle(e.target.value); // 제목 업데이트
+                    }}
                     className="mychatanalysis-title-input"
                   />
                 ) : (

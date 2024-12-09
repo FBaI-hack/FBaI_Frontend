@@ -4,18 +4,20 @@ import { ReactComponent as Person } from "../assets/icons/person.svg";
 import { ReactComponent as ThumbsUp } from "../assets/icons/thumbsup.svg";
 import { ReactComponent as BlueThumbsUp } from "../assets/icons/blue_thumbsup.svg";
 import { ReactComponent as Enter } from "../assets/icons/enter.svg";
+import useUserStore from "../store/userStore";
 import "../styles/PostDetail.css";
 
 function PostDetail() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useUserStore();
 
   const { category, author, title, date } = location.state || {};
   const [likes, setLikes] = useState(10); // 초기 좋아요 수
   const [liked, setLiked] = useState(false); // 좋아요 여부
   const [comments, setComments] = useState([
-    { id: 1, author: "이름", content: "내용내용내용", date: "2024-12-02" },
-    { id: 2, author: "이름", content: "내용내용내용", date: "2024-12-02" },
+    { id: 1, author: "이진수", content: "그러니까요..", date: "2024-12-02" },
+    { id: 2, author: "유영미", content: "저도 최근에 당했어요", date: "2024-12-02" },
   ]);
   const [newComment, setNewComment] = useState("");
 
@@ -32,7 +34,7 @@ function PostDetail() {
 
     const newCommentData = {
       id: comments.length + 1,
-      author: "이름",
+      author: user.nickname,
       content: newComment,
       date: new Date().toISOString().split("T")[0], // 오늘 날짜
     };
@@ -62,7 +64,7 @@ function PostDetail() {
 
       <div className="post-detail-content-container">
         <div className="post-detail-content">
-            제가 어쩌고저쩌고 아무튼 조심하세요.
+            계획적으로 더 치밀하게 사기 범죄를 일으키고 있습니다. 정말 분통해요!!
         </div>
         <a href="#!" className="post-detail-related-link">
             해당 게시글로 가기
@@ -101,7 +103,8 @@ function PostDetail() {
           ))}
         </ul>
 
-        <form className="post-detail-comment-form">
+        <form className="post-detail-comment-form"
+              onSubmit={handleCommentSubmit}>
           <input
             type="text"
             placeholder="댓글을 입력하세요."
@@ -109,7 +112,7 @@ function PostDetail() {
             onChange={(e) => setNewComment(e.target.value)}
             className="post-detail-comment-input"
           />
-          <button type="submit" className="post-detail-comment-submit" onSubmit={handleCommentSubmit}>
+          <button type="submit" className="post-detail-comment-submit" >
             <Enter className="post-detail-comment-submit-icon" />
           </button>
         </form>

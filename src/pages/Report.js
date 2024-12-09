@@ -6,13 +6,114 @@ import { ReactComponent as Person } from "../assets/icons/person.svg";
 import { ReactComponent as Search } from "../assets/icons/search.svg";
 import "../styles/Freeboard.css";
 
-const dummyPosts = Array.from({ length: 20 }, (_, index) => ({
-  id: index + 1,
-  author: `작성자${20 - index}`,
-  title: `김${20 - index} 조심하세요.`,
-  date: `2024-11-${26 - (index % 10)}`,
-  views: Math.floor(Math.random() * 100),
-}));
+const dummyPosts = [
+  {
+    id: 1,
+    author: "김민수",
+    title: "주차장에서 차량 파손 사건 발생",
+    date: "2024-12-06",
+    views: 123,
+  },
+  {
+    id: 2,
+    author: "이영희",
+    title: "지하철 내 소매치기 주의",
+    date: "2024-12-05",
+    views: 98,
+  },
+  {
+    id: 3,
+    author: "박철수",
+    title: "상가 앞 물건 절도 사건",
+    date: "2024-12-02",
+    views: 145,
+  },
+  {
+    id: 4,
+    author: "정수진",
+    title: "주택가 야간 침입 사건 발생",
+    date: "2024-12-01",
+    views: 67,
+  },
+  {
+    id: 5,
+    author: "최수진",
+    title: "택배 도난 사례 증가",
+    date: "2024-11-29",
+    views: 204,
+  },
+  {
+    id: 6,
+    author: "한예슬",
+    title: "공원에서 어린이 실종 사례",
+    date: "2024-11-28",
+    views: 173,
+  },
+  {
+    id: 7,
+    author: "김지훈",
+    title: "아파트 주차장에서 차량 도난",
+    date: "2024-11-27",
+    views: 189,
+  },
+  {
+    id: 8,
+    author: "송지훈",
+    title: "지하주차장에서 차량 안 물건 도난",
+    date: "2024-11-27",
+    views: 132,
+  },
+  {
+    id: 9,
+    author: "오세영",
+    title: "대형마트에서 발생한 폭력 사건",
+    date: "2024-11-25",
+    views: 112,
+  },
+  {
+    id: 10,
+    author: "이승기",
+    title: "전동 킥보드 도난 사건 증가",
+    date: "2024-11-22",
+    views: 176,
+  },
+  {
+    id: 11,
+    author: "박미영",
+    title: "고속도로 휴게소에서 차량 파손",
+    date: "2024-11-20",
+    views: 153,
+  },
+  {
+    id: 12,
+    author: "강찬욱",
+    title: "새벽 시간 도로변 폭행 사건",
+    date: "2024-11-20",
+    views: 89,
+  },
+  {
+    id: 13,
+    author: "정윤아",
+    title: "학교 앞 불법 영업 신고",
+    date: "2024-11-13",
+    views: 75,
+  },
+  {
+    id: 14,
+    author: "오민석",
+    title: "편의점에서 금품 강도 사건",
+    date: "2024-11-12",
+    views: 102,
+  },
+  {
+    id: 15,
+    author: "신혜진",
+    title: "야간 골목길에서 발생한 절도 사건",
+    date: "2024-11-10",
+    views: 121,
+  },
+];
+
 
 const POSTS_PER_PAGE = 12;
 

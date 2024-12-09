@@ -5,11 +5,46 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
+  const [introduce] = useState(""); // 빈 값으로 고정
+  const [imageUrl] = useState(""); // 빈 값으로 고정
 
-  const handleSignUp = (e) => {
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
+
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    console.log("회원가입 정보:", { email, password, nickname });
-    // 회원가입 로직 추가 (API 호출 등)
+
+    const requestBody = {
+      email,
+      password,
+      nickname,
+      introduce,
+      image_url: imageUrl,
+    };
+
+    try {
+      const response = await fetch(`${baseUrl}/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      const data = await response.json();
+
+      console.log("API 응답:", data);
+
+      if (response.ok && data.success) {
+        alert("회원가입이 완료되었습니다!");
+        console.log("회원가입 성공:", data);
+      } else {
+        alert(`회원가입 실패: ${data.error.message}`);
+        console.error("회원가입 실패:", data.error);
+      }
+    } catch (error) {
+      console.error("API 호출 오류:", error);
+    }
+
   };
 
   return (
